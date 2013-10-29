@@ -1,0 +1,11 @@
+{application, cowboy_request_id, [
+  {id, "cowboy_request_id"},
+  {description, "Get/generate a request id in cowboy"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {applications, [
+    kernel,
+    stdlib
+  ]},
+  {env, []}
+]}.
