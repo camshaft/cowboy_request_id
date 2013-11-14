@@ -15,7 +15,7 @@ init() ->
 
 init(Options) ->
   Header = fast_key:get(header, Options, <<"x-request-id">>),
-  Generator = fast_key:get(generator, Options, fun() -> uuid:to_string(uuid:v4()) end),
+  Generator = fast_key:get(generator, Options, fun() -> uuid:to_string(uuid:uuid4()) end),
   fun (Req, Env) ->
     {RequestID, Req3} = case cowboy_req:header(Header, Req) of
       {undefined, Req2} ->
